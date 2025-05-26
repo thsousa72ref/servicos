@@ -1,0 +1,93 @@
+# 🐧 Instalação e Configuração do Debian Linux
+
+Este guia apresenta o processo de instalação e configuração básica do sistema operacional **Debian GNU/Linux**, ideal para servidores de serviços de rede como DNS, DHCP, Ansible, etc.
+
+---
+
+## ✅ Requisitos
+
+- ISO do Debian (pode ser baixado em: https://www.debian.org/distrib/)
+- Máquina física ou virtual (VirtualBox, VMware ou Hyper-V)
+- Acesso à internet
+- Usuário com privilégios de root
+
+---
+
+## 🧩 Etapas de Instalação
+
+### 1. Iniciar a Instalação
+
+- Grave a ISO em um pendrive bootável (ex: usando Rufus) ou monte no virtualizador.
+- Selecione a opção **Install** ou **Graphical Install**.
+
+---
+
+### 2. Configurações básicas
+
+- Selecione o idioma: `Português do Brasil`
+- Região: `Brasil`
+- Layout do teclado: `Português Brasileiro ABNT2`
+
+---
+
+### 3. Configurar rede
+
+- Defina um nome de host (ex: `servidor1`)
+- Nome do domínio (opcional): `empresa.local`
+
+---
+
+### 4. Criar usuário
+
+- Senha do superusuário (`root`)
+- Criar um usuário comum (ex: `admin`)
+
+---
+
+### 5. Particionamento do disco
+
+- Escolha o particionamento **assistido com LVM**
+- Aceite as configurações sugeridas (ou personalize conforme necessário)
+
+---
+
+### 6. Instalação do sistema
+
+- Aguarde o término da instalação dos pacotes base
+
+---
+
+### 7. Instalar gerenciador de pacotes
+
+- Escolha a mirror (ex: `ftp.br.debian.org`)
+- Responda "Não" para o uso de mídia adicional
+
+---
+
+### 8. Selecionar software
+
+- Desmarque “Ambiente de desktop”
+- Marque apenas:
+  - **Servidor SSH**
+  - **Utilitários do sistema padrão**
+
+---
+
+### 9. Instalar o GRUB
+
+- Instale o GRUB no disco principal (`/dev/sda`)
+
+---
+
+### 10. Finalizar
+
+- Reinicie a máquina e faça login com o usuário criado.
+
+---
+
+## 🔧 Pós-instalação
+
+### Atualizar pacotes
+
+```bash
+sudo apt update && sudo apt upgrade -y
